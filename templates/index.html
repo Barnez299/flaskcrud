@@ -1,20 +1,13 @@
-{% extends 'base.html' %} 
-
-{% include 'header.html' %} 
-
-{% block title %} Home {% endblock %} 
-
-
-{% block body %} 
+{% extends 'base.html' %} {% include 'header.html' %} {% block title %} Home {% endblock %} {% block body %}
 
 
 <div class="container">
     <div class="row">
         <div class="col md-12">
             <div class="jumbotron">
-                <h2 class="display-5">Manage <b>Employees</b></h2>
+                <h2 class="display-5"><b>Manage Employees</b></h2>
                 <hr>
-                <a class="btn btn-success btn-md" href="Jumbo action link" role="button" data-toggle="modal" data-target="mymodal">Add Employee</a>
+                <a class="btn btn-success btn-md" href="Jumbo action link" role="button" data-toggle="modal" data-target="#mymodal"><i class="fas fa-user-plus"></i> Add Employee</a>
                 <hr>
                 <table class="table tabel-hover table-dark">
                     <tr>
@@ -24,26 +17,102 @@
                         <th>Phone</th>
                         <th>Action</th>
                     </tr>
-
                     <tr>
                         <td>01</td>
                         <td>Test1</td>
                         <td>test1@mail.me</td>
                         <td>0765534576</td>
                         <td>
-                            <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit"><i class="fas fa-edit    "></i> Edit</a>
-                            
-                            <a href="" class="btn btn-danger btn-xs ml-3" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
-                        </td>
+                            <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit"><i class="fas fa-user-edit"></i>  Edit</a>
 
+                            <a href="" class="btn btn-danger btn-xs ml-3" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-user-times"></i> Delete</a>
+                        </td>
                     </tr>
-                
+
+    <!-- Modal Edit Employee-->
+        <div id="modaledit" class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-user-edit"></i> Edit Employee</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    
+                    <form action="" method="POST">
+
+                        <div class="form-group">
+                            <label for="name" class="col-form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required='1'>
+                        </div>
+                         <div class="form-group">
+                            <label for="email" class="col-form-label">email</label>
+                            <input type="email" class="form-control" id="email" required='1'>
+                        </div>
+                         <div class="form-group">
+                            <label for="phone" class="col-form-label">Phone Number</label>
+                            <input type="number" class="form-control" id="phone" required='1'>
+                        </div>
+                        <hr>
+                        <button type="submit" class="btn btn-primary">Update</button>
+          
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        
+                    </div>
+            </div>
+        </div>
+
+
+                </table>
+            </div>
+
+
+            <!-- Modal Add Employee-->
+        <div id="mymodal" class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-user-plus"></i> Add Employee</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    
+                    <form action="" method="POST">
+
+                        <div class="form-group">
+                            <label for="name" class="col-form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required='1'>
+                        </div>
+                         <div class="form-group">
+                            <label for="email" class="col-form-label">email</label>
+                            <input type="email" class="form-control" id="email" required='1'>
+                        </div>
+                         <div class="form-group">
+                            <label for="phone" class="col-form-label">Phone Number</label>
+                            <input type="number" class="form-control" id="phone" required='1'>
+                        </div>
+                        <hr>
+                        <button type="submit" class="btn btn-primary">Save</button>
+          
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        
+                    </div>
             </div>
         </div>
     </div>
-    
 
-
+        </div>
+    </div>
 </div>
 
 
