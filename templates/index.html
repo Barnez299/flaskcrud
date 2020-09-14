@@ -1,5 +1,52 @@
-{% extends 'base.html' %} {% include 'header.html' %} {% block title %}Home{% endblock %} {% block body %}
+{% extends 'base.html' %} 
 
-<h1>Using Template Inheritance</h1>
+{% include 'header.html' %} 
+
+{% block title %} Home {% endblock %} 
+
+
+{% block body %} 
+
+
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron">
+                <h2 class="display-5">Manage <b>Employees</b></h2>
+                <hr>
+                <a class="btn btn-success btn-md" href="Jumbo action link" role="button" data-toggle="modal" data-target="mymodal">Add Employee</a>
+                <hr>
+                <table class="table tabel-hover table-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+
+                    <tr>
+                        <td>01</td>
+                        <td>Test1</td>
+                        <td>test1@mail.me</td>
+                        <td>0765534576</td>
+                        <td>
+                            <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit"><i class="fas fa-edit    "></i> Edit</a>
+                            
+                            <a href="" class="btn btn-danger btn-xs ml-3" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+                        </td>
+
+                    </tr>
+                
+            </div>
+        </div>
+    </div>
+    
+
+
+</div>
+
+
+
 
 {% endblock %}
