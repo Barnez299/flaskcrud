@@ -7,6 +7,31 @@
             <div class="jumbotron">
                 <h2 class="display-5"><b>Manage Employees</b></h2>
                 <hr>
+                {% with messages = get_flashed_messages() %}
+ 
+                {% if messages %}
+ 
+                {% for message in messages %}
+ 
+                <div class="alert alert-success alert-dismissable" role="alert">
+ 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+ 
+                        <span aria-hidden="true">x</span>
+ 
+                    </button>
+ 
+ 
+                {{message}}
+ 
+ 
+                </div>
+ 
+ 
+                {% endfor %}
+ 
+                {% endif %}
+                {% endwith %}
                 <a class="btn btn-success btn-md" href="Jumbo action link" role="button" data-toggle="modal" data-target="#mymodal"><i class="fas fa-user-plus"></i> Add Employee</a>
                 <hr>
                 <table class="table tabel-hover table-dark">
@@ -17,11 +42,18 @@
                         <th>Phone</th>
                         <th>Action</th>
                     </tr>
+
+
+                    {% for row in Employee %}
+
+
+
+
                     <tr>
-                        <td>01</td>
-                        <td>Test1</td>
-                        <td>test1@mail.me</td>
-                        <td>0765534576</td>
+                        <td>{{row.id}}</td>
+                        <td>{{row.name}}</td>
+                        <td>{{row.email}}</td>
+                        <td>{{row.phone}}</td>
                         <td>
                             <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit"><i class="fas fa-user-edit"></i>  Edit</a>
 
@@ -67,7 +99,7 @@
                             </div>
                         </div>
 
-
+                {% endfor %}
                 </table>
                 </div>
 

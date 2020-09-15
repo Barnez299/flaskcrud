@@ -1,11 +1,12 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 import psycopg2
 
 
 
 app = Flask(__name__)
+app.secret_key = "Secret Key"
 
 
 
@@ -40,7 +41,9 @@ class Employee(db.Model):
 
 @app.route('/')
 def Index():
-    return render_template('index.html')
+
+    all_data = Employee.query.all()
+    return render_template('index.html', Employee = all_data)
 
 @app.route('/insert', methods = ['POST'])
 def insert():
@@ -55,6 +58,9 @@ def insert():
         data = Employee(name, email, phone)
         db.session.add(data)
         db.session.commit()
+
+        # Flash messaging
+        flash('Employee added successfully !')
 
         return redirect(url_for('Index'))
 
