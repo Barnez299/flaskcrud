@@ -1,7 +1,7 @@
-import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 import psycopg2
+import os
 
 
 
@@ -45,6 +45,9 @@ def Index():
     all_data = Employee.query.all()
     return render_template('index.html', Employee = all_data)
 
+
+# Insert/Add employee route
+
 @app.route('/insert', methods = ['POST'])
 def insert():
  
@@ -65,6 +68,17 @@ def insert():
         return redirect(url_for('Index'))
 
         
+# Delete route
+
+@app.route('/delete/<id>/', methods = ['GET', 'POST'])
+def delete(id):
+    my_data = Employee.query.get(id)
+    db.session.delete(my_data)
+    db.session.commit()
+    flash("Employee Record Deleted")
+
+    return redirect(url_for('Index'))
+
 
 
 
