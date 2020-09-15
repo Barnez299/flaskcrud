@@ -29,93 +29,93 @@
                         </td>
                     </tr>
 
-    <!-- Modal Edit Employee-->
-        <div id="modaledit" class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-user-edit"></i> Edit Employee</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <!-- Modal Edit Employee-->
+                    <div id="modaledit" class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-user-edit"></i> Edit Employee</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </div>
-                    <div class="modal-body">
-                    
-                    <form action="" method="POST">
+                                </div>
+                                <div class="modal-body">
 
-                        <div class="form-group">
-                            <label for="name" class="col-form-label">Name</label>
-                            <input type="text" class="form-control" id="name" required='1'>
+                                    <form action="" method="POST">
+
+                                        <div class="form-group">
+                                            <label for="name" class="col-form-label">Name</label>
+                                            <input type="text" class="form-control" name="name" required='1'>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="col-form-label">email</label>
+                                            <input type="email" class="form-control" name="email" required='1'>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone" class="col-form-label">Phone Number</label>
+                                            <input type="number" class="form-control" name="phone" required='1'>
+                                        </div>
+                                        <hr>
+                                        <button type="submit" class="btn btn-primary" value="submit">Update</button>
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+                                </div>
+                            </div>
                         </div>
-                         <div class="form-group">
-                            <label for="email" class="col-form-label">email</label>
-                            <input type="email" class="form-control" id="email" required='1'>
-                        </div>
-                         <div class="form-group">
-                            <label for="phone" class="col-form-label">Phone Number</label>
-                            <input type="number" class="form-control" id="phone" required='1'>
-                        </div>
-                        <hr>
-                        <button type="submit" class="btn btn-primary">Update</button>
-          
-                    </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        
-                    </div>
-            </div>
-        </div>
 
 
                 </table>
-            </div>
+                </div>
 
 
-            <!-- Modal Add Employee-->
-        <div id="mymodal" class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-user-plus"></i> Add Employee</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- Modal Add Employee-->
+                <div id="mymodal" class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel"><i class="fas fa-user-plus"></i> Add Employee</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </div>
-                    <div class="modal-body">
-                    
-                    <form action="" method="POST">
+                            </div>
+                            <div class="modal-body">
 
-                        <div class="form-group">
-                            <label for="name" class="col-form-label">Name</label>
-                            <input type="text" class="form-control" id="name" required='1'>
+                                <form action="{{url_for('insert')}}" method="POST">
+
+                                    <div class="form-group">
+                                        <label for="name" class="col-form-label">Name</label>
+                                        <input type="text" class="form-control" name="name" required='1'>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="col-form-label">email</label>
+                                        <input type="email" class="form-control" name="email" required='1'>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone" class="col-form-label">Phone Number</label>
+                                        <input type="number" class="form-control" name="phone" required='1'>
+                                    </div>
+                                    <hr>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+                            </div>
                         </div>
-                         <div class="form-group">
-                            <label for="email" class="col-form-label">email</label>
-                            <input type="email" class="form-control" id="email" required='1'>
-                        </div>
-                         <div class="form-group">
-                            <label for="phone" class="col-form-label">Phone Number</label>
-                            <input type="number" class="form-control" id="phone" required='1'>
-                        </div>
-                        <hr>
-                        <button type="submit" class="btn btn-primary">Save</button>
-          
-                    </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        
-                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
-        </div>
-    </div>
-</div>
 
 
 
-
-{% endblock %}
+    {% endblock %}
